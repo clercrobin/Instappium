@@ -32,12 +32,15 @@ print("Succesfully connected with android device!")
 sleep(5)
 
 current_activity = driver.current_activity.split(".")[-1]
+print(current_activity)
 
 # Lets log in!
 if "SignedOut" in current_activity:
+    print(driver.page_source)
     check_login = driver.find_elements_by_xpath(
         "//android.widget.TextView[@text='Log In']"
     )
+    print(check_login)
     check_login[0].click()
 
     username_edit_text = driver.find_elements_by_xpath(
