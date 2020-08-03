@@ -36,13 +36,13 @@ print(current_activity)
 
 # Lets log in!
 if "SignedOut" in current_activity:
-    print(driver.page_source)
+    # print(driver.page_source)
     check_login = driver.find_elements_by_xpath(
         "//android.widget.TextView[@text='Log In']"
     )
     print(check_login)
     check_login[0].click()
-
+    # print(driver.page_source)
     username_edit_text = driver.find_elements_by_xpath(
         "//android.widget.EditText[@resource-id='com.instagram.android:id/login_username']"
     )
@@ -53,6 +53,7 @@ if "SignedOut" in current_activity:
     )
     password_edit_text[0].set_value(insta_password)
     sleep(1)
+    # print(driver.page_source)
 
     log_in = driver.find_elements_by_xpath(
         "//android.widget.TextView[@resource-id='com.instagram.android:id/button_text']"
@@ -63,10 +64,14 @@ if "SignedOut" in current_activity:
         print("Succesfully Logged in!")
 
 
+
+
 # Let's log out!
+sleep(5)
 profile = driver.find_elements_by_xpath(
     "//android.widget.FrameLayout[@content-desc='Profile' and @index=4]"
 )
+sleep(3)
 profile[0].click()
 sleep(1)
 options = driver.find_elements_by_xpath(
@@ -84,6 +89,16 @@ sleep(1)
 driver.swipe(0, 0, 0, 100, 100)
 sleep(3)
 
-logout = driver.find_element_by_id("com.instagram.android:id/row_simple_link_textview")
-logout.click()
+logout = driver.find_elements_by_id("com.instagram.android:id/row_simple_link_textview")
+logout[1].click()
 sleep(1)
+
+print(driver.page_source)
+
+logoutNotRemember = driver.find_elements_by_id("com.instagram.android:id/button_positive")
+logoutNotRemember[0].click()
+sleep(1)
+
+# logoutFinal = driver.find_elements_by_id("com.instagram.android:id/primary_button")
+# logoutFinal[0].click()
+# sleep(1)

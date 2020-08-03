@@ -9,6 +9,7 @@ import random
 
 # class import
 from ..common import xpath, User, Logger
+from ..common.xpath import xpath
 
 
 class AppiumCommonActions(object):
@@ -52,12 +53,12 @@ class AppiumCommonActions(object):
         )
         elem[0].click()
         sleep(3)
-
+        print(self.driver.page_source)
         elem = self.driver.find_elements_by_id(
             xpath.read_xpath("search", "search_text")
         )
         elem[0].click()
-        sleep(1)
+        sleep(2)
 
         elem = self.driver.find_elements_by_id(
             xpath.read_xpath("search", "search_text")

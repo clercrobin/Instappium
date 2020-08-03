@@ -1,14 +1,17 @@
 # doing one action using the webdriver
+
 import instappium
 from instappium import FSMSession
 from instappium import Settings
 
 
 session = instappium.InstAppium(
-    username="xxx", password="yyy", device="emulator-5554", show_logs=True
+    username="abc", password="123, device="emulator-5554", show_logs=True
 )
 
-session._webdriver.go_search("whoever you want", "accounts")
+# returns logged if not logged
+
+session._webdriver.go_search("robin", "accounts")
 
 # Basic settings to do some testings
 Settings.set_action_delays(
@@ -32,7 +35,7 @@ Settings.set_quota_supervisor(
 fsm = FSMSession(session._webdriver)
 
 # should respond idle
-fsm.state
+print(fsm.state)
 
 # let's go to the home page
 fsm.go_homepage()

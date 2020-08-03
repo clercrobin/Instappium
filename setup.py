@@ -47,8 +47,8 @@ setup(
         "Bug Reports": (project_homepage + "/issues"),
         "Source": (project_homepage + "/tree/master/instappium"),
     },
-    packages=["instappium"],
-    # include_package_data=True,  # <- packs every data file in the package
+    packages=["instappium", "instappium.common", "instappium.engine", "instappium.appium_actions", "tests"],
+    include_package_data=True,  # <- packs every data file in the package
     keywords=(
         "instappium python instagram automation \
          marketing promotion bot appium"
