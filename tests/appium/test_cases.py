@@ -5,12 +5,16 @@ from instappium import FSMSession
 from instappium import Settings
 
 
+# session = instappium.InstAppium(
+#     username="acc", password="mdp", device="emulator-5554", show_logs=True
+# )
+
 session = instappium.InstAppium(
-    username="abc", password="123, device="emulator-5554", show_logs=True
+    username="acc", password="mdp", device="33008e3439f514d9", show_logs=True
 )
 
 # returns logged if not logged
-
+# print(session._webdriver._web_driver_instance.page_source)
 session._webdriver.go_search("robin", "accounts")
 
 # Basic settings to do some testings

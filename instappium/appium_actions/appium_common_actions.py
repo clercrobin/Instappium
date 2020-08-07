@@ -53,7 +53,7 @@ class AppiumCommonActions(object):
         )
         elem[0].click()
         sleep(3)
-        print(self.driver.page_source)
+        # print(self.driver.page_source)
         elem = self.driver.find_elements_by_id(
             xpath.read_xpath("search", "search_text")
         )

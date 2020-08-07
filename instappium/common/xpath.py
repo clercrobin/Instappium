@@ -10,7 +10,7 @@ class xpath:
     __xpath = {}
 
     __xpath["login"] = {
-        "login_button": "//android.widget.TextView[@text='Log In']",
+        "login_button": "//android.widget.TextView[@text='Log in']",
         "login_username": "//android.widget.EditText[@resource-id='com.instagram.android:id/login_username']",
         "login_password": "//android.widget.EditText[@resource-id='com.instagram.android:id/password']",
         "log_me_in_button": "//android.widget.TextView[@resource-id='com.instagram.android:id/button_text']",

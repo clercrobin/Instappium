@@ -60,29 +60,36 @@ class InstAppium(object):
 
         # Lets log in!
         if "SignedOut" in current_activity:
-            print(self._webdriver._web_driver_instance.page_source)
+            # print(self._webdriver._web_driver_instance.page_source)
             check_login = self._webdriver.find_elements_by_xpath(
                 xpath.read_xpath("login", "login_button")
             )
-            check_login[0].click()
+            if check_login:
+                check_login[0].click()
+                sleep(5)
+
+            print(self._webdriver._web_driver_instance.page_source)
 
             username_edit_text = self._webdriver.find_elements_by_xpath(
                 xpath.read_xpath("login", "login_username")
             )
-            username_edit_text[0].set_value(username)
+            if username_edit_text:
+                username_edit_text[0].set_value(username)
 
             password_edit_text = self._webdriver.find_elements_by_xpath(
                 xpath.read_xpath("login", "login_password")
             )
-            password_edit_text[0].set_value(password)
-            sleep(1)
+            if password_edit_text:
+                password_edit_text[0].set_value(password)
+            sleep(5)
 
             log_in = self._webdriver.find_elements_by_xpath(
                 xpath.read_xpath("login", "log_me_in_button")
             )
-            log_in[0].click()
+            if log_in:
+                log_in[0].click()
             
-            sleep(5)
+            sleep(2)
 
             if self._webdriver.current_activity().split(".")[-1] == "MainActivity":
                 Logger.highlight_print(
